@@ -22,7 +22,7 @@ SBI specification version is a 32bits long unsigned integer.
 ```
 31                    16                   0
 --------------------------------------------
-Major Version         |  Minor Version     |  
+Major Version         |  Minor Version     |
 ```
 
 The existing SBI version will be at version **v0.1**. It will called legacy version
@@ -47,10 +47,12 @@ Function Set |  Reserved |   Function Type  |
 
 ```
 Bit[31:16] =  Function Set
+
 Bit[12:15] =  Reserved for future use
+
 Bit[11:0]  =  Function Type within Function Set
 
-Both function set and function type are unsigned integers. Thus, there can be 2^12
+Both function set and function type are unsigned integers. Thus, there can be 2^16
 function types within a function set. The following table describes the generic
 function set numbers and reserved number ranges for future use.
 
@@ -60,7 +62,7 @@ function set numbers and reserved number ranges for future use.
 | Base         | 0x001         | Base Functions mandatory for any SBI version. |
 | HART PM      | 0x002         | Hart power management.                        |
 | System PM    | 0x003         | System-level power management                 |
-| Reserved     | 0x010-0x7ff   | Reserved for experimental extensions          |  
+| Reserved     | 0x010-0x7ff   | Reserved for experimental extensions          |
 | Vendor       | 0x800-0xfff   | Vendor specific Functions                     |
 
 Anybody who intend to add new SBI functionalities and unsure of the any existing
@@ -69,7 +71,7 @@ In case of any conflict with other SBI function set, RISC-V foundation reserves
 the right to resolve the conflict by assigning different IDs to both parties.
 Please keep in mind that, *Reserved* region should only be used for SBI functionalities
 that may become standard in future. Any vendor specific functionalities should
-fall under *Vendor* function set.  
+fall under *Vendor* function set.
 
 ## Statement of Principles
 1. Every new SBI version with minor version upgrade must be be backward compatible
