@@ -30,7 +30,8 @@ Platform" chapters of this document.
 
 ## Supervisor-Level Platform
 
-### SBI
+Supervisor-mode programs must implement version 0.1.0 of the RISC-V SBI
+specification, which can be found at https://github.com/riscv/riscv-sbi-
 
 ## Machine-Level Platform
 
